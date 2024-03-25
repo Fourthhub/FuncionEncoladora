@@ -6,6 +6,7 @@ from azure.identity import DefaultAzureCredential
 from azure.storage.queue import QueueServiceClient, QueueClient, QueueMessage, BinaryBase64DecodePolicy, BinaryBase64EncodePolicy
 
 
+connect_str = "DefaultEndpointsProtocol=https;AccountName=funciondecola;AccountKey=RTl0R58hLPv0ZvsxDufY5jlw2s3yyFlDBC11fdzP1AXLMOo30GGxJ4vgjfcnj+2EMPR5YfWhYpSe+AStQPSFZw==;EndpointSuffix=core.windows.net"
 
 queue_name = "colaDeReservas"
 def main(req: func.HttpRequest) -> func.HttpResponse:
