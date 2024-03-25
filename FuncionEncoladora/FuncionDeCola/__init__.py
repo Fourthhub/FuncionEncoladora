@@ -5,7 +5,7 @@ import os, uuid
 from azure.identity import DefaultAzureCredential
 from azure.storage.queue import QueueServiceClient, QueueClient, QueueMessage, BinaryBase64DecodePolicy, BinaryBase64EncodePolicy
 
-#sdasda
+
 
 queue_name = "colaDeReservas"
 def main(req: func.HttpRequest) -> func.HttpResponse:
