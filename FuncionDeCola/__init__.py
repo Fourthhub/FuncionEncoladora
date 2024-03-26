@@ -14,7 +14,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     
     logging.info('Python HTTP trigger function processed a request.')
     queue_client = QueueClient.from_connection_string(connect_str, queue_name)
-    queue_client.send_message(req)
+    queue_client.send_message(req.get_json())
 
 
     return func.HttpResponse(
