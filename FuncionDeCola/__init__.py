@@ -8,7 +8,7 @@ from azure.storage.queue import QueueServiceClient, QueueClient, QueueMessage, B
 
 connect_str = "DefaultEndpointsProtocol=https;AccountName=colafun;AccountKey=9lrsrXglDMb2+9aY3V8uZzZbI36AXU1tVIc8QSpdmFRacuJeGJEZlU2IisrgZi2HNBzvbtuRc1x++AStbm3BaQ==;EndpointSuffix=core.windows.net"
 
-queue_name = "colafun"
+queue_name = "colafunqueue"
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
     
