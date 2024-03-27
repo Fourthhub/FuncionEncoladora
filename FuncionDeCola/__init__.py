@@ -6,9 +6,8 @@ from azure.identity import DefaultAzureCredential
 from azure.storage.queue import QueueServiceClient, QueueClient, QueueMessage, BinaryBase64DecodePolicy, BinaryBase64EncodePolicy
 
 
-connect_str = "DefaultEndpointsProtocol=https;AccountName=colafun;AccountKey=9lrsrXglDMb2+9aY3V8uZzZbI36AXU1tVIc8QSpdmFRacuJeGJEZlU2IisrgZi2HNBzvbtuRc1x++AStbm3BaQ==;EndpointSuffix=core.windows.net"
-
-queue_name = "colafunqueue"
+connect_str = "DefaultEndpointsProtocol=https;AccountName=facturaciononcola;AccountKey=ipAS4lsYSlLmk1vhy5L//l2zoXSV2Fui5f0rc3b5ikPzY7SHJvu1w66Rb2h4vZODIxZcddyZnBg3+AStslU+3w==;EndpointSuffix=core.windows.net"
+queue_name = "colita"
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
     
