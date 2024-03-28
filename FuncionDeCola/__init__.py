@@ -2,8 +2,9 @@ import logging
 
 import azure.functions as func
 import os, uuid
+import json
 from azure.identity import DefaultAzureCredential
-from azure.storage.queue import QueueServiceClient, QueueClient, QueueMessage, BinaryBase64DecodePolicy, BinaryBase64EncodePolicy
+from azure.storage.queue import QueueServiceClient, QueueClient, QueueMessage, BinaryBase64DecodePolicy, BinaryBase64EncodePolicy, TextBase64EncodePolicy
 
 
 connect_str = "DefaultEndpointsProtocol=https;AccountName=facturaciononcola;AccountKey=ipAS4lsYSlLmk1vhy5L//l2zoXSV2Fui5f0rc3b5ikPzY7SHJvu1w66Rb2h4vZODIxZcddyZnBg3+AStslU+3w==;EndpointSuffix=core.windows.net"
@@ -12,8 +13,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     
     logging.info('Python HTTP trigger function processed a request.')
-    queue_client = QueueClient.from_connection_string(connect_str, queue_name)
-    queue_client.send_message(req.get_json())
+    queue_client = QueueClient.from_connection_string(connect_str, queue_name,    message_encode_policy=TextBase64EncodePolicy())
+    queue_client.send_message(json.dumps(req.get_json()))
+    
 
 
     return func.HttpResponse(
